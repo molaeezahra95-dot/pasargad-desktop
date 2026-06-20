@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<meta http-equiv="refresh" content="300">
+<title>گزارش پاسارگاد — دسکتاپ</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --gold:#c9a84c;--bg:#f0f2f5;--card:#ffffff;
+  --border:#e5e7eb;--up:#16a34a;--dn:#dc2626;
+  --teal:#0891b2;--txt:#111827;--muted:#6b7280;
+  --hdr:#1a1a2e;
+}
+body{
+  font-family:'Vazirmatn',Tahoma,sans-serif;
+  background:var(--bg);color:var(--txt);min-height:100vh;
+}
+/* Header */
+.hdr{
+  background:var(--hdr);border-bottom:3px solid var(--gold);
+  padding:16px 36px;display:flex;align-items:center;
+  justify-content:space-between;gap:24px;
+}
+.hdr-brand{display:flex;align-items:center;gap:10px;}
+.hdr-title{font-size:20px;font-weight:800;color:var(--gold);}
+.hdr-sub{font-size:11px;color:#9ca3af;margin-top:3px;}
+.hdr-index{text-align:center;}
+.idx-num{font-size:28px;font-weight:800;color:#fff;}
+.idx-chg{font-size:15px;font-weight:700;margin-top:2px;}
+.idx-lbl{font-size:10px;color:#9ca3af;margin-top:2px;}
+.idx-up{color:#4ade80;} .idx-dn{color:#f87171;} .idx-flat{color:#9ca3af;}
+.hdr-meta{text-align:left;}
+.hdr-date{font-size:16px;font-weight:800;color:var(--gold);}
+.hdr-time{font-size:12px;color:#9ca3af;margin-top:4px;}
+/* Main */
+.main{max-width:1400px;margin:0 auto;padding:24px 28px;}
+/* Cards */
+.cards-row{display:flex;gap:14px;margin-bottom:22px;}
+.stk-card{
+  flex:1;background:var(--card);border-radius:14px;
+  padding:18px 20px;border:1px solid var(--border);
+  border-top:3px solid var(--gold);
+  box-shadow:0 2px 8px rgba(0,0,0,.06);transition:box-shadow .2s;
+}
+.stk-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.1);}
+.sc-name{font-size:20px;font-weight:800;color:var(--txt);margin-bottom:4px;}
+.sc-status{font-size:10px;padding:2px 8px;border-radius:12px;display:inline-block;font-weight:700;margin-bottom:10px;}
+.ok{background:#f0fdf4;color:var(--up);border:1px solid #bbf7d0;}
+.stop{background:#fef2f2;color:var(--dn);border:1px solid #fecaca;}
+.sc-price{font-size:24px;font-weight:800;color:var(--txt);}
+.sc-unit{font-size:12px;color:var(--muted);font-weight:600;}
+.sc-chg{font-size:13px;font-weight:800;padding:3px 12px;border-radius:20px;display:inline-block;margin-top:6px;direction:ltr;}
+.up{background:#f0fdf4;color:var(--up);border:1px solid #bbf7d0;}
+.dn{background:#fef2f2;color:var(--dn);border:1px solid #fecaca;}
+.zt{background:#f9fafb;color:var(--muted);border:1px solid var(--border);}
+.sc-metrics{display:flex;flex-direction:column;gap:4px;margin-top:10px;}
+.sc-m{font-size:11px;background:#f9fafb;border:1px solid var(--border);border-radius:6px;padding:4px 10px;color:var(--txt);white-space:nowrap;}
+/* Sections */
+.section{
+  background:var(--card);border-radius:14px;border:1px solid var(--border);
+  box-shadow:0 2px 6px rgba(0,0,0,.05);overflow:hidden;margin-bottom:20px;
+}
+.sec-hdr{
+  background:#f9fafb;border-bottom:1px solid var(--border);
+  padding:13px 22px;font-size:14px;font-weight:800;color:var(--txt);
+  border-right:4px solid var(--gold);
+}
+/* Table */
+.tbl{width:100%;border-collapse:collapse;}
+.tbl th{
+  padding:10px 16px;text-align:center;font-size:12px;font-weight:700;
+  color:var(--muted);background:#f9fafb;border-bottom:1px solid var(--border);
+  white-space:nowrap;
+}
+.tbl td{
+  padding:14px 16px;text-align:center;font-size:14px;font-weight:700;
+  border-bottom:1px solid var(--border);vertical-align:middle;
+}
+.tbl tr:last-child td{border-bottom:none;}
+.tbl tr:hover td{background:#fafafa;}
+.td-name{font-size:16px;font-weight:800;text-align:right;color:var(--txt);padding-right:22px !important;}
+.td-price{font-size:16px;font-weight:800;}
+.td-unit{font-size:10px;color:var(--muted);font-weight:600;display:block;margin-top:2px;}
+.badge{display:inline-block;font-size:12px;padding:4px 12px;border-radius:18px;font-weight:800;direction:ltr;}
+.c-up{color:var(--up);} .c-dn{color:var(--dn);}
+.c-teal{color:var(--teal);} .c-gold{color:var(--gold);} .c-muted{color:var(--muted);}
+/* Footer */
+.footer{text-align:center;color:var(--muted);font-size:12px;padding:20px;}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <div class="hdr-brand">
+    
+    <div>
+      <div class="hdr-title">گروه مالی پاسارگاد</div>
+      <div class="hdr-sub">سیستم مانیتورینگ بازار سرمایه</div>
+    </div>
+  </div>
+  <div class="hdr-index">
+    <div class="idx-num">۵,۱۸۲,۳۸۹</div>
+    <div class="idx-chg idx-up">+۰.۶۱%</div>
+    <div class="idx-lbl">شاخص کل</div>
+  </div>
+  <div class="hdr-meta">
+    <div class="hdr-date">۱۴۰۵/۰۳/۳۰</div>
+    <div class="hdr-time">آپدیت ۱۰:۳۸</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="cards-row" id="cardsRow"></div>
+
+  <div class="section">
+    <div class="sec-hdr">جدول اطلاعات معاملاتی</div>
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th style="text-align:right;padding-right:22px">نماد</th>
+          <th>آخرین قیمت</th>
+          <th>تغییر</th>
+          <th>قیمت پایانی</th>
+          <th>حجم معاملات</th>
+          <th>ارزش معاملات</th>
+          <th>ارزش بازار</th>
+          <th>ورود پول حقیقی</th>
+          <th>میانگین حجم ماه</th>
+        </tr>
+      </thead>
+      <tbody id="mainBody"></tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="sec-hdr">حقیقی / حقوقی</div>
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th style="text-align:right;padding-right:22px">نماد</th>
+          <th style="color:var(--up)">خرید حقیقی</th>
+          <th style="color:var(--dn)">فروش حقیقی</th>
+          <th style="color:var(--up)">خرید حقوقی</th>
+          <th style="color:var(--dn)">فروش حقوقی</th>
+          <th>تعداد خریدار حقیقی</th>
+          <th>تعداد فروشنده حقیقی</th>
+          <th>تعداد خریدار حقوقی</th>
+          <th>تعداد فروشنده حقوقی</th>
+        </tr>
+      </thead>
+      <tbody id="iiBody"></tbody>
+    </table>
+  </div>
+</div>
+
+<div class="footer">آخرین بروزرسانی: ۱۰:۳۸ &nbsp;|&nbsp; آپدیت خودکار هر ۵ دقیقه &nbsp;|&nbsp; https://molaeezahra95-dot.github.io/pasargad-desktop/</div>
+
+<script>
+var stocks = [{"name": "وپاسار", "status": "مجاز", "lastPrice": 985, "closingPrice": 985, "prevPrice": 957, "change": 2.93, "closingChange": 2.93, "volume": 25199193, "value": 248212051050, "retailBuy": 25194193, "retailSell": 2166193, "instBuy": 0, "instSell": 23028000, "moneyFlow": 226825800000, "avgVolume": 42655102, "marketCap": 462.44, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "آریان", "status": "مجاز", "lastPrice": 534, "closingPrice": 536, "prevPrice": 521, "change": 2.44, "closingChange": 2.82, "volume": 32585935, "value": 174654668080, "retailBuy": 22320935, "retailSell": 9588578, "instBuy": 10265000, "instSell": 22997357, "moneyFlow": 68245433520, "avgVolume": 21061295, "marketCap": 80.4, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "بپاس", "status": "مجاز", "lastPrice": 742, "closingPrice": 738, "prevPrice": 721, "change": 2.91, "closingChange": 2.36, "volume": 34451099, "value": 254223741490, "retailBuy": 5488652, "retailSell": 29898279, "instBuy": 28962447, "instSell": 4552820, "moneyFlow": -180143047260, "avgVolume": 8182156, "marketCap": 76.38, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "میدکو", "status": "مجاز", "lastPrice": 682, "closingPrice": 682, "prevPrice": 663, "change": 2.87, "closingChange": 2.87, "volume": 116389129, "value": 793773859780, "retailBuy": 8389129, "retailSell": 18814129, "instBuy": 108000000, "instSell": 97575000, "moneyFlow": -71098500000, "avgVolume": 41017811, "marketCap": 197.78, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}, {"name": "اتکای", "status": "مجاز", "lastPrice": 241, "closingPrice": 251, "prevPrice": 247, "change": -2.51, "closingChange": 1.33, "volume": 1141967, "value": 2863091662, "retailBuy": 423383, "retailSell": 1141967, "instBuy": 718584, "instSell": 0, "moneyFlow": -1801490088, "avgVolume": 4609662, "marketCap": 5.01, "retailBuyCnt": 0, "retailSellCnt": 0, "instBuyCnt": 0, "instSellCnt": 0}];
+
+function nVol(n) {
+  if (!n) return '—';
+  var m = n / 1e6;
+  if (m >= 1) return parseFloat(m.toFixed(1)).toLocaleString('fa-IR');
+  return n.toLocaleString('fa-IR');
+}
+function uVol(n) {
+  if (!n) return '';
+  return n >= 1e6 ? 'میلیون سهم' : 'سهم';
+}
+function nVal(n) {
+  if (!n) return '—';
+  var b = n / 1e10;
+  if (b >= 1) return (b >= 10 ? Math.round(b) : parseFloat(b.toFixed(1))).toLocaleString('fa-IR');
+  return parseFloat((b * 1000).toFixed(0)).toLocaleString('fa-IR');
+}
+function uVal(n) {
+  if (!n) return '';
+  return n / 1e10 >= 1 ? 'میلیارد تومان' : 'میلیون تومان';
+}
+function nFlow(n) {
+  if (!n) return '—';
+  var b = Math.abs(n) / 1e10;
+  var sign = n > 0 ? '+' : '-';
+  return sign + (b >= 10 ? Math.round(b) : parseFloat(b.toFixed(1))).toLocaleString('fa-IR');
+}
+function nMC(n) {
+  if (!n) return '—';
+  var v = parseFloat(n);
+  return (v >= 10 ? Math.round(v) : parseFloat(v.toFixed(1))).toLocaleString('fa-IR');
+}
+function cc(c) { return c > 0 ? 'up' : c < 0 ? 'dn' : 'zt'; }
+
+function buildCards() {
+  var html = '';
+  stocks.forEach(function(s) {
+    var sign = s.change > 0 ? '+' : '';
+    var sBadge = s.status === 'مجاز' ? 'ok' : 'stop';
+    html += '<div class="stk-card">'
+      + '<div class="sc-name">' + s.name + '</div>'
+      + '<span class="sc-status ' + sBadge + '">' + s.status + '</span>'
+      + '<div class="sc-price">' + (s.lastPrice || 0).toLocaleString('fa-IR')
+        + ' <span class="sc-unit">تومان</span></div>'
+      + '<div><span class="sc-chg ' + cc(s.change) + '">' + sign + s.change + '%</span></div>'
+      + '<div class="sc-metrics">'
+      + '<span class="sc-m">حجم معاملات: ' + nVol(s.volume) + ' ' + uVol(s.volume) + '</span>'
+      + '<span class="sc-m">ارزش معاملات: ' + nVal(s.value) + ' ' + uVal(s.value) + '</span>'
+      + '</div></div>';
+  });
+  document.getElementById('cardsRow').innerHTML = html;
+}
+
+function buildMainTable() {
+  var html = '';
+  stocks.forEach(function(s) {
+    var sign = s.change > 0 ? '+' : '';
+    var fVal = s.moneyFlow || 0;
+    var fCls = fVal >= 0 ? 'c-up' : 'c-dn';
+    var fNum = nFlow(s.moneyFlow);
+    var cSign = s.closingChange > 0 ? '+' : '';
+    html += '<tr>'
+      + '<td class="td-name">' + s.name + '</td>'
+      + '<td class="td-price">' + (s.lastPrice || 0).toLocaleString('fa-IR')
+        + '<span class="td-unit">تومان</span></td>'
+      + '<td><span class="badge ' + cc(s.change) + '">' + sign + s.change + '%</span></td>'
+      + '<td>' + (s.closingPrice || 0).toLocaleString('fa-IR')
+        + '<span class="td-unit">' + (cSign + s.closingChange + '%') + '</span></td>'
+      + '<td class="c-teal">' + nVol(s.volume)
+        + '<span class="td-unit">' + uVol(s.volume) + '</span></td>'
+      + '<td>' + nVal(s.value)
+        + '<span class="td-unit">' + uVal(s.value) + '</span></td>'
+      + '<td class="c-gold">' + nMC(s.marketCap)
+        + '<span class="td-unit">همت</span></td>'
+      + '<td class="' + fCls + '">' + fNum
+        + '<span class="td-unit">میلیارد تومان</span></td>'
+      + '<td class="c-muted">' + nVol(s.avgVolume)
+        + '<span class="td-unit">' + uVol(s.avgVolume) + '</span></td>'
+      + '</tr>';
+  });
+  document.getElementById('mainBody').innerHTML = html;
+}
+
+function buildIITable() {
+  var html = '';
+  stocks.forEach(function(s) {
+    var rB = s.retailBuy || 0, rS = s.retailSell || 0;
+    var iB = s.instBuy   || 0, iS = s.instSell   || 0;
+    html += '<tr>'
+      + '<td class="td-name">' + s.name + '</td>'
+      + '<td class="c-up">' + nVol(rB)
+        + '<span class="td-unit">' + uVol(rB) + '</span></td>'
+      + '<td class="c-dn">' + nVol(rS)
+        + '<span class="td-unit">' + uVol(rS) + '</span></td>'
+      + '<td class="c-up">' + nVol(iB)
+        + '<span class="td-unit">' + uVol(iB) + '</span></td>'
+      + '<td class="c-dn">' + nVol(iS)
+        + '<span class="td-unit">' + uVol(iS) + '</span></td>'
+      + '<td class="c-muted">' + (s.retailBuyCnt  || 0).toLocaleString('fa-IR') + ' نفر</td>'
+      + '<td class="c-muted">' + (s.retailSellCnt || 0).toLocaleString('fa-IR') + ' نفر</td>'
+      + '<td class="c-muted">' + (s.instBuyCnt    || 0).toLocaleString('fa-IR') + ' نفر</td>'
+      + '<td class="c-muted">' + (s.instSellCnt   || 0).toLocaleString('fa-IR') + ' نفر</td>'
+      + '</tr>';
+  });
+  document.getElementById('iiBody').innerHTML = html;
+}
+
+buildCards();
+buildMainTable();
+buildIITable();
+</script>
+</body>
+</html>

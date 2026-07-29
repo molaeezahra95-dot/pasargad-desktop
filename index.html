@@ -89,6 +89,9 @@ body{
 .td-name{font-size:20px;font-weight:800;text-align:right;color:var(--txt);padding-right:12px !important;}
 .td-price{font-size:20px;font-weight:800;}
 .td-unit{font-size:11px;color:var(--muted);font-weight:700;display:inline;margin-right:3px;white-space:nowrap;}
+.flow-value{display:inline-block;position:relative;direction:ltr;unicode-bidi:isolate;padding-left:.72em;}
+.flow-digits{display:inline-block;direction:ltr;unicode-bidi:isolate;}
+.flow-sign{position:absolute;left:0;top:0;direction:ltr;unicode-bidi:isolate;}
 .badge{display:inline-block;font-size:12px;padding:3px 9px;border-radius:18px;font-weight:800;direction:ltr;}
 .c-up{color:var(--up);} .c-dn{color:var(--dn);}
 .c-teal{color:var(--teal);} .c-gold{color:var(--gold);} .c-muted{color:var(--muted);}
@@ -184,7 +187,8 @@ function nFlow(n) {
   if (!n) return '—';
   var b = Math.abs(n) / 1e10;
   var sign = n > 0 ? '+' : '-';
-  return sign + (b >= 10 ? Math.round(b) : parseFloat(b.toFixed(1))).toLocaleString('fa-IR');
+  var digits = (b >= 10 ? Math.round(b) : parseFloat(b.toFixed(1))).toLocaleString('fa-IR');
+  return '<span class="flow-digits">' + digits + '</span><span class="flow-sign">' + sign + '</span>';
 }
 function nMC(n) {
   if (!n) return '—';
@@ -293,7 +297,7 @@ function buildMainTable() {
         + '<span class="td-unit">' + uVol(s.avgVolume) + '</span></td>'
       + '<td class="c-teal">' + nVol(s.volume)
         + '<span class="td-unit">' + uVol(s.volume) + '</span></td>'
-      + '<td class="' + fCls + '">' + fNum
+      + '<td class="' + fCls + '">' + (fNum !== '—' ? '<span class="flow-value">' + fNum + '</span>' : fNum)
         + '<span class="td-unit">میلیارد تومان</span></td>'
       + '<td class="c-up">' + nVol(s.retailBuy)
         + '<span class="td-unit">' + uVol(s.retailBuy) + '</span></td>'

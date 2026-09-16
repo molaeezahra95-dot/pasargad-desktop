@@ -1,0 +1,11 @@
+{
+  "project": "pasargad-desktop",
+  "mode": "static",
+  "args": [],
+  "output": "index.html",
+  "code": [
+    "index.html"
+  ],
+  "imports": [],
+  "port": null
+}

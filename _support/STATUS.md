@@ -32,3 +32,8 @@
 بررسی وجود کد و وابستگی‌ها موفق؛ اجرای کامل هنوز آزمایش نشده است.
 فایل‌های تغییرکرده در این مرحله: `RUN.bat`، `_support/start.py`، `_support/project.json`، `_support/CHECK-RESULT.txt` و همین فایل وضعیت.
 گام بعد: آزمایش قابلیت‌های برنامه با داده واقعی؛ اتصال پرتال به نسخه‌های گیت‌هاب همچنان نیمه‌تمام است. تغییرات این مرتب‌سازی هنوز پوش نشده‌اند.
+
+## Publication verified 2026-09-16
+Branch: `sync/organized-local-20260916`
+Published commit: `1cc34a273a1e29cbb6d4cb9921b0b75fbb0f4da7`
+Remote SHA matched local commit. Main and existing remote versions preserved.
